@@ -1,1 +1,1 @@
-loadstring(game:HttpGetAsync("https://github.com/Infinite-Store/Infinite-Store/raw/main/main.lua"))
+loadstring(game:HttpGetAsync("https://cdn.jsdelivr.net/gh/Infinite-Store/Infinite-Store/main.lua"))
