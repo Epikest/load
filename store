@@ -1,17 +1,27 @@
 if (getgenv) then
 	if (getgenv().dev and getgenv().dev == true) then
 		if (getgenv().cache and getgenv().cache == false) then
+			print("Caching disabled")
+			print("Loading Infinite Store Nightly")
 			loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Infinite-Store/Nightly-Store/dev/main.luau"))()
 		else
+			print("Caching enabled")
+			print("Loading Infinite Store Nightly")
 			loadstring(game:HttpGetAsync("https://cdn.jsdelivr.net/gh/Infinite-Store/Nightly-Store@dev/main.luau"))()
 		end
 	else
 		if (getgenv().cache and getgenv().cache == false) then
+			print("Caching disabled")
+			print("Loading Infinite Store")
 			loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Infinite-Store/Infinite-Store/main/main.luau"))()
 		else
+			print("Caching enabled")
+			print("Loading Infinite Store")
 			loadstring(game:HttpGetAsync("https://cdn.jsdelivr.net/gh/Infinite-Store/Infinite-Store@main/main.luau"))()
 		end
 	end
 else
+	print("Caching enabled")
+	print("Loading Infinite Store")
 	loadstring(game:HttpGetAsync("https://cdn.jsdelivr.net/gh/Infinite-Store/Infinite-Store@main/main.luau"))()
 end
