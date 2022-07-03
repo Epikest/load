@@ -1,13 +1,13 @@
 if (getgenv) then
 	if (getgenv().dev and getgenv().dev == true) then
-		if (getgenv.cache and getgenv().cache == false) then
+		if (getgenv().cache and getgenv().cache == false) then
 			loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Infinite-Store/Nightly-Store/dev/main.luau"))()
 		else
 			loadstring(game:HttpGetAsync("https://cdn.jsdelivr.net/gh/Infinite-Store/Nightly-Store@dev/main.luau"))()
 		end
 	
 	else
-		if (getgenv.cache and getgenv().cache == false) then
+		if (getgenv().cache and getgenv().cache == false) then
 			loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Infinite-Store/Infinite-Store/main/main.luau"))()
 		else
 			loadstring(game:HttpGetAsync("https://cdn.jsdelivr.net/gh/Infinite-Store/Infinite-Store@main/main.luau"))()
