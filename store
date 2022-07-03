@@ -1,4 +1,5 @@
 if (getgenv and getgenv().dev and getgenv().dev == true) then
+	getgenv().dev = true
 	loadstring(game:HttpGetAsync("https://cdn.jsdelivr.net/gh/Infinite-Store/Nightly-Store@dev/main.luau"))()
 else
 	loadstring(game:HttpGetAsync("https://cdn.jsdelivr.net/gh/Infinite-Store/Infinite-Store@main/main.luau"))()
