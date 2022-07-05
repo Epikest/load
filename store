@@ -78,4 +78,4 @@ for _, Connection in pairs(getconnections(game:GetService("LogService").MessageO
         detected = true
     end
 end
-rconsoleprint(detected)
+rconsoleprint(tostring(detected))
