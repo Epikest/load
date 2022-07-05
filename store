@@ -5,7 +5,7 @@ function isDetected()
 	if isfile(".detected") then
 		for _,connection in next, getconnections(game:GetService("LogService").MessageOut) do
 			if connection then
-				Connection:Disable()
+				connection:Disable()
 			end
 		end
 	end
