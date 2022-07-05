@@ -1,6 +1,6 @@
 if isfile then
 	if isfile(".detected") then
-  	  	Connection:Disable()
+		Connection:Disable()
 	end
 else
 	Connection:Disable()
