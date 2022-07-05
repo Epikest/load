@@ -5,6 +5,9 @@ if isfile then
 else
 	Connection:Disable()
 end
+if getgenv().forcelog then
+	Connection:Enable()
+end
 
 function Art()
 	print("                                                                                                       ")
