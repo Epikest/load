@@ -1,36 +1,3 @@
-if getgenv then
-	if getgenv().dev then
-		if not getgenv().cache then
-			game:GetService("TestService"):Warn(false, "Caching disabled")
-			game:GetService("TestService"):Message("Loading Infinite Store Nightly")
-			LogoNightly()
-			loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Infinite-Store/Nightly-Store/dev/main.luau"))()
-		else
-			game:GetService("TestService"):Warn(false, "Caching enabled")
-			game:GetService("TestService"):Message("Loading Infinite Store Nightly")
-			LogoNightly()
-			loadstring(game:HttpGetAsync("https://cdn.jsdelivr.net/gh/Infinite-Store/Nightly-Store@dev/main.luau"))()
-		end
-	else
-		if not getgenv().cache then
-			game:GetService("TestService"):Warn(false, "Caching disabled")
-			game:GetService("TestService"):Message("Loading Infinite Store")
-			Logo()
-			loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Infinite-Store/Infinite-Store/main/main.luau"))()
-		else
-			game:GetService("TestService"):Warn(false, "Caching enabled")
-			game:GetService("TestService"):Message("Loading Infinite Store")
-			Logo()
-			loadstring(game:HttpGetAsync("https://cdn.jsdelivr.net/gh/Infinite-Store/Infinite-Store@main/main.luau"))()
-		end
-	end
-	else
-	game:GetService("TestService"):Warn(false, "Caching enabled")
-	game:GetService("TestService"):Message("Loading Infinite Store")
-	Logo()
-	loadstring(game:HttpGetAsync("https://cdn.jsdelivr.net/gh/Infinite-Store/Infinite-Store@main/main.luau"))()
-end
-
 function Logo()
 	print("            :!!!!~^:                                                                                ")
 	print("            .7J~~75Y~       :7~  ^?JJJJJ7. ^7^  ~7:       .!7. .!!.^?JJJ?JJJJ~.~?JJJJJ?:            ")
@@ -70,4 +37,37 @@ function LogoNightly()
 	warn("                  .~!!!!~:~5J7~!JBG!..~?PB~    :JP5?!~~!?5PJ:  ^B5:^JGY~ .J#J!!!!!:^GY?.            ")
 	warn("                    ....  .^7JYYJ??!~!7!77:      :!?JYYJ?!:    .7!.  ^?7. ~JJJJJJJ~^YJ?^            ")
 	warn("                                  .^^^:.                                                            ")
+end
+
+if getgenv then
+	if getgenv().dev then
+		if not getgenv().cache then
+			game:GetService("TestService"):Warn(false, "Caching disabled")
+			game:GetService("TestService"):Message("Loading Infinite Store Nightly")
+			LogoNightly()
+			loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Infinite-Store/Nightly-Store/dev/main.luau"))()
+		else
+			game:GetService("TestService"):Warn(false, "Caching enabled")
+			game:GetService("TestService"):Message("Loading Infinite Store Nightly")
+			LogoNightly()
+			loadstring(game:HttpGetAsync("https://cdn.jsdelivr.net/gh/Infinite-Store/Nightly-Store@dev/main.luau"))()
+		end
+	else
+		if not getgenv().cache then
+			game:GetService("TestService"):Warn(false, "Caching disabled")
+			game:GetService("TestService"):Message("Loading Infinite Store")
+			Logo()
+			loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Infinite-Store/Infinite-Store/main/main.luau"))()
+		else
+			game:GetService("TestService"):Warn(false, "Caching enabled")
+			game:GetService("TestService"):Message("Loading Infinite Store")
+			Logo()
+			loadstring(game:HttpGetAsync("https://cdn.jsdelivr.net/gh/Infinite-Store/Infinite-Store@main/main.luau"))()
+		end
+	end
+	else
+	game:GetService("TestService"):Warn(false, "Caching enabled")
+	game:GetService("TestService"):Message("Loading Infinite Store")
+	Logo()
+	loadstring(game:HttpGetAsync("https://cdn.jsdelivr.net/gh/Infinite-Store/Infinite-Store@main/main.luau"))()
 end
