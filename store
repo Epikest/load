@@ -1,14 +1,14 @@
 function isDetected()
-	if forcelog then
-		return
-	end
-	if isfile(".detected") then
-		for _,connection in next, getconnections(game:GetService("LogService").MessageOut) do
-			if connection then
-				connection:Disable()
-			end
-		end
-	end
+    if forcelog then
+        return
+    end
+    if isfile(".detected") then
+        for i,v in next, getconnections(game:GetService("LogService").MessageOut) do
+            if v then
+                v:Disable()
+            end
+        end
+    end
 end
 function Art()
 	print("                                                                                                       ")
