@@ -1,14 +1,15 @@
-if isfile then
-	if isfile(".detected") then
+function isDetected()
+	if isfile then
+		if isfile(".detected") then
+			Connection:Disable()
+		end
+	else
 		Connection:Disable()
 	end
-else
-	Connection:Disable()
+	if getgenv().forcelog then
+		Connection:Enable()
+	end
 end
-if getgenv().forcelog then
-	Connection:Enable()
-end
-
 function Art()
 	print("                                                                                                       ")
 	print("^!!~~^.                                                                                                ")
@@ -53,26 +54,31 @@ end
 if getgenv then
 	if getgenv().dev then
 		if not getgenv().cache then
+			isDetected()
 			warn("Caching disabled")
 			ArtNightly()
 			loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Infinite-Store/Nightly-Store/dev/main.luau"))()
 		else
+			isDetected()
 			warn("Caching enabled")
 			ArtNightly()
 			loadstring(game:HttpGetAsync("https://cdn.jsdelivr.net/gh/Infinite-Store/Nightly-Store@dev/main.luau"))()
 		end
 	else
 		if not getgenv().cache then
+			isDetected()
 			warn("Caching disabled")
 			Art()
 			loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Infinite-Store/Infinite-Store/main/main.luau"))()
 		else
+			isDetected()
 			warn("Caching enabled")
 			Art()
 			loadstring(game:HttpGetAsync("https://cdn.jsdelivr.net/gh/Infinite-Store/Infinite-Store@main/main.luau"))()
 		end
 	end
-	else
+else
+	isDetected()
 	warn("Caching enabled")
 	Art()
 	loadstring(game:HttpGetAsync("https://cdn.jsdelivr.net/gh/Infinite-Store/Infinite-Store@main/main.luau"))()
