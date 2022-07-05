@@ -71,3 +71,11 @@ if getgenv then
 	Art()
 	loadstring(game:HttpGetAsync("https://cdn.jsdelivr.net/gh/Infinite-Store/Infinite-Store@main/main.luau"))()
 end
+
+detected = false
+for _, Connection in pairs(getconnections(game:GetService("LogService").MessageOut)) do
+    if Connection then
+        detected = true
+    end
+end
+rconsoleprint(detected)
