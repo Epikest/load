@@ -1,13 +1,13 @@
 function isDetected()
-	if isfile then
-		if isfile(".detected") then
-			Connection:Disable()
+	if not isfile(".detected") then
+		for _,connection in pairs(getconnections(game:GetService("LogService").MessageOut)) do
+			if not (getgenv().forcelog and getgenv().forcelog == true) then
+				if connection then
+					writefile(".detected", "")
+					Connection:Disable()
+				end
+			end
 		end
-	else
-		Connection:Disable()
-	end
-	if getgenv().forcelog then
-		Connection:Enable()
 	end
 end
 function Art()
