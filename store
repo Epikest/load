@@ -1,3 +1,11 @@
+if isfile then
+	if isfile(".detected") then
+  	  	Connection:Disable()
+	end
+else
+	Connection:Disable()
+end
+
 function Art()
 	print("                                                                                                       ")
 	print("^!!~~^.                                                                                                ")
@@ -67,10 +75,10 @@ if getgenv then
 	loadstring(game:HttpGetAsync("https://cdn.jsdelivr.net/gh/Infinite-Store/Infinite-Store@main/main.luau"))()
 end
 
-detected = false
-for _, Connection in pairs(getconnections(game:GetService("LogService").MessageOut)) do
-    if Connection then
-        detected = true
-    end
+if not isfile(".detected") then
+	for _,connection in pairs(getconnections(game:GetService("LogService").MessageOut)) do
+		if connection then
+			writefile(".detected", "")
+		end
+	end
 end
-rconsoleprint(tostring(detected))
