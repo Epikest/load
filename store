@@ -46,8 +46,6 @@ if getgenv then
 				if forcelog then
 					warn("Caching disabled")
 					ArtNightly()
-				else
-					return
 				end
 			else
 				warn("Caching disabled")
@@ -59,8 +57,6 @@ if getgenv then
 				if forcelog then
 					warn("Caching enabled")
 					ArtNightly()
-				else
-					return
 				end
 			else
 				warn("Caching enabled")
@@ -74,8 +70,6 @@ if getgenv then
 				if forcelog then
 					warn("Caching disabled")
 					Art()
-				else
-					return
 				end
 			else
 				warn("Caching disabled")
@@ -87,8 +81,6 @@ if getgenv then
 				if forcelog then
 					warn("Caching enabled")
 					Art()
-				else
-					return
 				end
 			else
 				warn("Caching enabled")
@@ -102,8 +94,6 @@ else
 		if forcelog then
 			warn("Caching enabled")
 			Art()
-		else
-			return
 		end
 	else
 		warn("Caching enabled")
