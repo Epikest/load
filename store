@@ -49,6 +49,9 @@ if getgenv then
 					ArtNightly()
 				end
 			else
+				if forcelog then
+					warn("Logging enforced")
+				end
 				warn("Caching disabled")
 				ArtNightly()
 			end
@@ -61,6 +64,9 @@ if getgenv then
 					ArtNightly()
 				end
 			else
+				if forcelog then
+					warn("Logging enforced")
+				end
 				warn("Caching enabled")
 				ArtNightly()
 			end
@@ -75,6 +81,9 @@ if getgenv then
 					Art()
 				end
 			else
+				if forcelog then
+					warn("Logging enforced")
+				end
 				warn("Caching disabled")
 				Art()
 			end
@@ -87,6 +96,9 @@ if getgenv then
 					Art()
 				end
 			else
+				if forcelog then
+					warn("Logging enforced")
+				end
 				warn("Caching enabled")
 				Art()
 			end
@@ -101,6 +113,9 @@ else
 			Art()
 		end
 	else
+		if forcelog then
+			warn("Logging enforced")
+		end
 		warn("Caching enabled")
 		Art()
 	end
