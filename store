@@ -44,6 +44,7 @@ if getgenv then
 		if not getgenv().cache then
 			if isfile(".detected") then
 				if forcelog then
+					warn("Logging enforced")
 					warn("Caching disabled")
 					ArtNightly()
 				end
@@ -55,6 +56,7 @@ if getgenv then
 		else
 			if isfile(".detected") then
 				if forcelog then
+					warn("Logging enforced")
 					warn("Caching enabled")
 					ArtNightly()
 				end
@@ -68,6 +70,7 @@ if getgenv then
 		if not getgenv().cache then
 			if isfile(".detected") then
 				if forcelog then
+					warn("Logging enforced")
 					warn("Caching disabled")
 					Art()
 				end
@@ -79,6 +82,7 @@ if getgenv then
 		else
 			if isfile(".detected") then
 				if forcelog then
+					warn("Logging enforced")
 					warn("Caching enabled")
 					Art()
 				end
@@ -92,6 +96,7 @@ if getgenv then
 else
 	if isfile(".detected") then
 		if forcelog then
+			warn("Logging enforced")
 			warn("Caching enabled")
 			Art()
 		end
