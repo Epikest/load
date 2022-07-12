@@ -74,7 +74,7 @@ if getgenv then
 			loadstring(game:HttpGetAsync("https://cdn.jsdelivr.net/gh/Infinite-Store/Nightly-Store@dev/main.luau"))()
 		end
 	else
-		if not getgenv().cache then
+		if not getgenv().args["cache"] then
 			if isfile(".detected") then
 				if getgenv().args["forcelog"] then
 					warn("Logging enforced")
@@ -108,13 +108,13 @@ if getgenv then
 	end
 else
 	if isfile(".detected") then
-		if forcelog then
+		if getgenv().args["forcelog"] then
 			warn("Logging enforced")
 			warn("Caching enabled")
 			Art()
 		end
 	else
-		if forcelog then
+		if getgenv().args["forcelog"] then
 			warn("Logging enforced")
 		end
 		warn("Caching enabled")
