@@ -1,10 +1,10 @@
 local args = ... or ""
-function getoption(option)
+getgenv().getoption= function(option)
 	local options = getgenv().options or _G.options
 	return not (not table.find(options, option))
 end
 
-function Art()
+getgenv().art = function()
 	print("                                                                                                       ")
 	print("^!!~~^.                                                                                                ")
 	print(".:^^!??:  .                         ~7. ^?^       !7. ~JJJJJ?: ^?: :?~       ~?: :?^.7JJJJJJJ7.^JJJJJJ~")
@@ -24,7 +24,7 @@ function Art()
 	print("                  .^~!!~.                         .::.                 .::.             .   ......     ")
 	print("                                                                                                       ")
 end
-function ArtNightly()
+getgenv().artNightly = function()
 	print("                                                                                                       ")
 	print("^!!~~^.                                                                                                ")
 	print(".:^^!??:  .                         ~7. ^?^       !7. ~JJJJJ?: ^?: :?~       ~?: :?^.7JJJJJJJ7.^JJJJJJ~")
@@ -56,14 +56,14 @@ if getoption("dev") then
 			if getoption("forcelog") then
 				warn("Logging enforced")
 				warn("Caching disabled")
-				ArtNightly()
+				artNightly()
 			end
 		else
 			if getoption("forcelog") then
 				warn("Logging enforced")
 			end
 			warn("Caching disabled")
-			ArtNightly()
+			artNightly()
 		end
 		loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Infinite-Store/Nightly-Store/dev/main.luau"))()
 	else
@@ -71,14 +71,14 @@ if getoption("dev") then
 			if getoption("forcelog") then
 				warn("Logging enforced")
 				warn("Caching enabled")
-				ArtNightly()
+				artNightly()
 			end
 		else
 			if getoption("forcelog") then
 				warn("Logging enforced")
 			end
 			warn("Caching enabled")
-			ArtNightly()
+			artNightly()
 		end
 		loadstring(game:HttpGetAsync("https://cdn.jsdelivr.net/gh/Infinite-Store/Nightly-Store@dev/main.luau"))()
 	end
@@ -88,14 +88,14 @@ else
 			if getoption("forcelog") then
 				warn("Logging enforced")
 				warn("Caching disabled")
-				Art()
+				art()
 			end
 		else
 			if getoption("forcelog") then
 				warn("Logging enforced")
 			end
 			warn("Caching disabled")
-			Art()
+			art()
 		end
 		loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Infinite-Store/Infinite-Store/main/main.luau"))()
 	else
@@ -103,14 +103,14 @@ else
 			if getoption("forcelog") then
 				warn("Logging enforced")
 				warn("Caching enabled")
-				Art()
+				art()
 			end
 		else
 			if getoption("forcelog") then
 				warn("Logging enforced")
 			end
 			warn("Caching enabled")
-			Art()
+			art()
 		end
 		loadstring(game:HttpGetAsync("https://cdn.jsdelivr.net/gh/Infinite-Store/Infinite-Store@main/main.luau"))()
 	end
