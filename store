@@ -1,6 +1,5 @@
 local args = ... or ""
-getgenv().getoption= function(option)
-	local options = getgenv().options or _G.options
+getgenv().getoption = function(option)
 	return not (not table.find(options, option))
 end
 
@@ -45,11 +44,21 @@ getgenv().artNightly = function()
 	print("                                                                                                       ")
 end
 
-if getgenv then
-	getgenv().options = string.split(args, " ")
-else
-	_G.options = string.split(args, " ")
+local function switch(case, cases)
+    return (cases[case] and ((typeof(cases[case]) == 'function' and cases[case]()) or cases[case])) or (typeof(cases['default']) == 'function' and cases['default']()) or cases['default']
 end
+
+print(switch('first', {
+    ['first'] = function()
+        return 'true'
+    end,
+    ['second'] = 'false',
+    ['default'] = function()
+        return 'ok'
+    end
+}))
+
+getgenv().options = string.split(args, " ")
 if getoption("dev") then
 	if not getoption("cache") then
 		if isfile(".detected") then
