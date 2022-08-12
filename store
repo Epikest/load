@@ -1,4 +1,5 @@
 local args = ... or ""
+getgenv().options = string.split(args, " ")
 getgenv().getoption = function(option)
 	return not (not table.find(options, option))
 end
@@ -53,7 +54,6 @@ switch(options, {
 	}
 )
 
-getgenv().options = string.split(args, " ")
 if getoption("dev") then
 	if not getoption("cache") then
 		if isfile(".detected") then
